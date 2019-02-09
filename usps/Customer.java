@@ -1,6 +1,6 @@
 package usps;
-
-public class Customer {
+public class Customer 
+{
     private String name;
     private String contactInfo;
     private int taskTime;
