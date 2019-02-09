@@ -12,6 +12,8 @@ public class CustomerHTHandler_Test {
         int userTaskTime;
         int numCustomer = 1;
 
+        String whiteSpaceDump;
+
 
         Scanner reader = new Scanner(System.in);
 
@@ -22,6 +24,7 @@ public class CustomerHTHandler_Test {
             userName = reader.nextLine();
             System.out.println("Enter phone or email: ");
             userContact = reader.nextLine();
+            whiteSpaceDump = reader.nextLine();
             System.out.println("Choose your task (add # minutes for now): ");
             userTaskTime = reader.nextInt();
 
