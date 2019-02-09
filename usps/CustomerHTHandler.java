@@ -7,8 +7,8 @@ import usps.WaitTime;
 public class CustomerHTHandler {
 
     String keyCustomerID;
-    int valTaskTime;
-    Map<String, Integer> cht;
+    Integer valTaskTime;
+    Map<String, Integer> cht = new Hashtable<>();
 
     public CustomerHTHandler() {
         Map<String, Integer> cht = new Hashtable<>();
@@ -18,8 +18,15 @@ public class CustomerHTHandler {
         return cht;
     }
 
-    public int addCustomer(Customer nextCust) {
-        cht.put(nextCust.getName(), nextCust.getTaskTime());
+    public int addCustomer(Customer nextCust, CustomerHTHandler hh) {
+      //  System.out.println("calling put for HT");
+        keyCustomerID = nextCust.getName();
+        valTaskTime = nextCust.getTaskTime();
+      //  System.out.println("passing name: " + keyCustomerID);
+      //  System.out.println("passing taskTime: " + valTaskTime);
+
+        hh.cht.put(keyCustomerID, valTaskTime);
+      //  System.out.println("customer added to CHT, returning time");
         return nextCust.getTaskTime();
     }
 
