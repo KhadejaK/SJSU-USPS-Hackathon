@@ -1,4 +1,5 @@
 package usps;
+import usps.WaitTime;
 
 public class Location 
 {
@@ -7,6 +8,7 @@ public class Location
 	private String city;
 	private String state;
 	private String zip;
+	private WaitTime localWait;
 	
 	
 	public Location(String n, String a, String c, 
@@ -17,6 +19,7 @@ public class Location
 		city = c;
 		state = s;
 		zip = z;
+		localWait = new WaitTime(0);
 	}
 	
 	public String getName()
@@ -32,6 +35,11 @@ public class Location
 	public String getZip()
 	{
 		return zip;
+	}
+
+	public WaitTime getLocalWait()
+	{
+		return localWait;
 	}
 	
 	@Override

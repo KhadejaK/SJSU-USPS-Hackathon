@@ -12,21 +12,17 @@ public class CustomerHTHandler_Test {
         int userTaskTime;
         int numCustomer = 1;
 
-        String whiteSpaceDump;
-
-
-        Scanner reader = new Scanner(System.in);
-
         CustomerHTHandler hh = new CustomerHTHandler(); 
 
         while (true) {
+            Scanner reader = new Scanner(System.in);
             System.out.println("Enter name: ");
             userName = reader.nextLine();
             System.out.println("Enter phone or email: ");
             userContact = reader.nextLine();
-            whiteSpaceDump = reader.nextLine();
             System.out.println("Choose your task (add # minutes for now): ");
             userTaskTime = reader.nextInt();
+            reader.close();
 
             if (userName == "SomeTypePassword")
             {
@@ -36,9 +32,7 @@ public class CustomerHTHandler_Test {
             Customer newCustomer = new Customer(userName, userContact, 
                 userTaskTime, numCustomer);
 
-System.out.println("Customer object created");
             hh.addCustomer(newCustomer, hh);
-System.out.println("Customer obj added to table");
             numCustomer++;
         }
 
