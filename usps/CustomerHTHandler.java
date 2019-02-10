@@ -19,20 +19,17 @@ public class CustomerHTHandler {
     }
 
     public int addCustomer(Customer nextCust, CustomerHTHandler hh) {
-      //  System.out.println("calling put for HT");
         keyCustomerID = nextCust.getName();
         valTaskTime = nextCust.getTaskTime();
-      //  System.out.println("passing name: " + keyCustomerID);
-      //  System.out.println("passing taskTime: " + valTaskTime);
 
         hh.cht.put(keyCustomerID, valTaskTime);
-      //  System.out.println("customer added to CHT, returning time");
         return nextCust.getTaskTime();
     }
 
-    public int removeCustomer(Customer processedCust) {
-        cht.remove(processedCust.getName());
-        return processedCust.getTaskTime();
+    public int removeCustomer(String processedCustName) {
+        int processedTime = cht.get(processedCustName);
+        cht.remove(processedCustName);
+        return processedTime;
     }
 
     public void endOfDay() {

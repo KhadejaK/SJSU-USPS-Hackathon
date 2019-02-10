@@ -43,9 +43,9 @@ public class LocationFinderAndTester
 			{
 				System.out.println(x.toString());
 				System.out.print("Is this the correct location? (Y/N): ");
-				String confirm = s.nextLine();
+				String confirm = s.next().charAt(0);
 				
-				if (confirm.toLowerCase().equals("y"))
+				if (confirm == 'y' || confirm == 'Y')
 				{
 					s.close();
 					return x;
